@@ -26,5 +26,15 @@ namespace WpfDataBinding
             MySlider.Value = 50;
             MyText.Text = MySlider.Value.ToString();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello World!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void HiButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hi World!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
     }
 }

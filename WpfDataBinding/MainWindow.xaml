@@ -6,6 +6,20 @@
         xmlns:local="clr-namespace:WpfDataBinding"
         mc:Ignorable="d"
         Title="Slider" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="Red" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <StackPanel>
         <Slider IsSnapToTickEnabled="True" Name="MySlider" Minimum="0" Maximum="100" />
         <TextBox x:Name="MyText" Width="50" 
@@ -26,12 +40,20 @@
                 </Style>
             </Button.Style>
         </Button>
+        <!-- Cool comment 
         <Button x:Name="HiButton" Content="Hi Button" Height="60" Width="100" Click="HiButton_Click">
             <Button.Template>
-                <ControlTemplate>
-                    <Ellipse Fill="Red" />
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="Red" />
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                    </Grid>
                 </ControlTemplate>
             </Button.Template>
+        </Button>
+        -->
+
+        <Button x:Name="HiButton" Content="Hi Button" Height="60" Width="100" Click="HiButton_Click">
         </Button>
     </StackPanel>
 </Window>

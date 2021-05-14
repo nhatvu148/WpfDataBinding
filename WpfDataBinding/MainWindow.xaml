@@ -55,5 +55,26 @@
 
         <Button x:Name="HiButton" Content="Hi Button" Height="60" Width="100" Click="HiButton_Click">
         </Button>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="4" Text="First Name" VerticalAlignment="Center" />
+            <TextBox Margin="4" Text="{Binding Path=FirstName}" Grid.Column="1" />
+
+            <TextBlock Margin="4" Text="Last Name" Grid.Row="1" VerticalAlignment="Center" />
+            <TextBox Margin="4" Text="{Binding Path=LastName}" Grid.Column="1" Grid.Row="1" />
+
+            <TextBlock Margin="4" Text="Age" Grid.Row="2" VerticalAlignment="Center" />
+            <TextBox Margin="4" Text="{Binding Path=Age}" Grid.Column="1" Grid.Row="2" />
+        </Grid>
     </StackPanel>
 </Window>

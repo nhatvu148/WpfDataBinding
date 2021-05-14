@@ -25,6 +25,15 @@ namespace WpfDataBinding
             InitializeComponent();
             MySlider.Value = 50;
             MyText.Text = MySlider.Value.ToString();
+
+            Person obj = new Person()
+            {
+                FirstName = "Nhat",
+                LastName = "Vu",
+                Age = 30
+            };
+
+            this.DataContext = obj;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

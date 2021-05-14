@@ -20,20 +20,24 @@ namespace WpfDataBinding
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Person person { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
             MySlider.Value = 50;
             MyText.Text = MySlider.Value.ToString();
 
-            Person obj = new Person()
+            person = new Person()
             {
                 FirstName = "Nhat",
                 LastName = "Vu",
                 Age = 30
             };
 
-            this.DataContext = obj;
+            // DataContext is a dependency property
+            this.DataContext = person;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

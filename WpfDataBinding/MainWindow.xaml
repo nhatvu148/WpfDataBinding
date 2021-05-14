@@ -65,16 +65,22 @@
                 <RowDefinition Height="30" />
                 <RowDefinition Height="30" />
                 <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
             </Grid.RowDefinitions>
 
             <TextBlock Margin="4" Text="First Name" VerticalAlignment="Center" />
-            <TextBox Margin="4" Text="{Binding Path=FirstName}" Grid.Column="1" />
+            <TextBox Margin="4" Text="{Binding Path=FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" />
 
             <TextBlock Margin="4" Text="Last Name" Grid.Row="1" VerticalAlignment="Center" />
-            <TextBox Margin="4" Text="{Binding Path=LastName}" Grid.Column="1" Grid.Row="1" />
+            <TextBox Margin="4" Text="{Binding Path=LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" />
 
-            <TextBlock Margin="4" Text="Age" Grid.Row="2" VerticalAlignment="Center" />
-            <TextBox Margin="4" Text="{Binding Path=Age}" Grid.Column="1" Grid.Row="2" />
+            <TextBlock Margin="4" Text="Last Name" Grid.Row="2" VerticalAlignment="Center" />
+            <TextBox x:Name="MyName" Margin="4" Text="{Binding Path=FullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" />
+
+            <TextBlock Margin="4" Text="Age" Grid.Row="3" VerticalAlignment="Center" />
+            <TextBox Margin="4" Text="{Binding Path=Age, Mode=TwoWay}" Grid.Column="1" Grid.Row="3" />
         </Grid>
+
+        <TextBlock Margin="4" Text="{Binding ElementName=MyName, Path=Text}" VerticalAlignment="Center" />
     </StackPanel>
 </Window>

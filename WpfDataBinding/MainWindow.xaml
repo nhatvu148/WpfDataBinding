@@ -85,5 +85,6 @@
 
         <Button Content="{Binding}" />
         <Button Content="{Binding Test}" />
+        <Button Content="{Binding Text2}" />
     </StackPanel>
 </Window>

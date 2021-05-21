@@ -39,6 +39,8 @@ namespace WpfDataBinding
             // Binding is to bind content to class Person (View Model)
             this.DataContext = person;
 
+            this.DataContext = new Person2();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

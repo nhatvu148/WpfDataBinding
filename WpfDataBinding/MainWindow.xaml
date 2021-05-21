@@ -82,5 +82,8 @@
         </Grid>
 
         <TextBlock Margin="4" Text="{Binding ElementName=MyName, Path=Text}" VerticalAlignment="Center" />
+
+        <Button Content="{Binding}" />
+        <Button Content="{Binding Test}" />
     </StackPanel>
 </Window>

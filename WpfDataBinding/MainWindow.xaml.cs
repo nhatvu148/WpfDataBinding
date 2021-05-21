@@ -35,7 +35,8 @@ namespace WpfDataBinding
                 Age = 30
             };
 
-            // DataContext is a dependency property
+            // DataContext is root of UI, is a dependency property
+            // Binding is to bind content to class Person (View Model)
             this.DataContext = person;
 
         }

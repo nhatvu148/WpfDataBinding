@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WpfDataBinding
 {
-    public class Person : INotifyPropertyChanged
+    public class Person : INotifyPropertyChanged // Declare View Model
     {
         private string firstName;
         private string lastName;
@@ -71,6 +71,46 @@ namespace WpfDataBinding
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
+
+        private string mTest;
+
+        public string Test
+        {
+            get { return mTest; }
+            set
+            {
+                if (mTest == value)
+                    return;
+
+                mTest = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(Test)));
+            }
+        }
+
+
+        public Person()
+        {
+            Task.Run(async () =>
+            {
+                int i = 0;
+                while (true)
+                {
+                    await Task.Delay(200);
+                    Test = (i++).ToString();
+                    //PropertyChanged(this, new PropertyChangedEventArgs("Test")); // Use this if there is no private prop get set
+                }
+            });
+        }
+
+        //public string Test { get; set; } = "My Props";
+
+        public override string ToString()
+        {
+            // return base.ToString();
+            return "Hello World";
+        }
+
+
     }
 }

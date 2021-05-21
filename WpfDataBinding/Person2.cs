@@ -11,7 +11,9 @@ namespace WpfDataBinding
     [AddINotifyPropertyChangedInterface]
     class Person2 : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
+        public event PropertyChangedEventHandler PropertyChanged = (sender, e) =>
+        {
+        };
 
         public string Text2 { get; set; }
 
